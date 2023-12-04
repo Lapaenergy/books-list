@@ -8,7 +8,7 @@ import styles from './styles';
 
 const VideoCallScreen: React.FC<IProps> = ({ route }) => {
   const { preview, title, publicName, price } = route.params;
-  console.log('route.params', route.params);
+
   const { screenModes, orientation } = useOrientation();
 
   const isLandscape = orientation === screenModes.landscape;

@@ -44,7 +44,7 @@ const HomeScreen: React.FC<IProps> = ({ navigation: { navigate } }) => {
 
       setBooks((prevBooks) => [...prevBooks, ...formattedData]);
     } catch (error) {
-      console.log('Fetch content error', error);
+      console.error('Fetch content error', error);
     } finally {
       setLoadingBooks(false);
     }
