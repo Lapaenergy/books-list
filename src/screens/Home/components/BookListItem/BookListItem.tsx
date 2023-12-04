@@ -7,15 +7,15 @@ import styles from './styles';
 interface IProps {
   book: PreparedBook;
   isLandscape: boolean;
-  onCallPress: (book: PreparedBook) => void;
+  onBookPress: (book: PreparedBook) => void;
 }
 
-const BookListItem: React.FC<IProps> = (props) => {
-  const { book, onCallPress, isLandscape } = props;
+const BookListItemComponent: React.FC<IProps> = (props) => {
+  const { book, onBookPress, isLandscape } = props;
   const { preview, publicName, title, price } = book || {};
 
   const handleCallPress = () => {
-    InteractionManager.runAfterInteractions(() => onCallPress(book));
+    InteractionManager.runAfterInteractions(() => onBookPress(book));
   };
 
   const priceValue = getPrice(price);
@@ -46,4 +46,4 @@ const BookListItem: React.FC<IProps> = (props) => {
   );
 };
 
-export default BookListItem;
+export default BookListItemComponent;
